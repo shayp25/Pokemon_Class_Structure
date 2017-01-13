@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Level;
+
+/**
+ * Created by taylor hudson on 1/13/2017.
+ */
+public class Pokemon {
+    private int HP;
+    private int Attack;
+    private int Defense;
+    private int Sp_Attack;
+    private int Sp_Defense;
+    private int Speed;
+    private int Total;
+    private int Avg;
+    private String id;
+    private String Poke;
+    private String NickName;
+    private long maxHealth;
+    private long currentHealth;
+    // private BufferedImage img;
+    private Integer level;
+    private Long XP;
+    private Long TNLxp;
+    private Long EvolveLevel;
+    private ArrayList<Move> KNOWNMOVES;
+    private HashMap<Integer, Move> LEARNED;
+    private Utility.ExperienceGroup XPMODE;
+
+
+    public Pokemon(String ID){
+        id = ID;
+    }
+    public int randomdistrubte(int x, int y, int r){
+        int ranRange = 0;
+
+        return ranRange;
+    }
+    public void gainXP(long xp){
+        XP += xp;
+        if(level != 100){
+            if(XP.compareTo(TNLxp) >= 0){
+                LevelUp();
+            }
+        }
+    }
+    private void LevelUp(){
+        level = level + 1;
+        TNLxp = Utility.TNL(level, XPMODE);
+        AbilityMod();
+        if(level == 100){
+            TNLxp = Long.MAX_VALUE;
+            return;
+        }
+        if(XP.compareTo(TNLxp) >= 0){
+            gainXP(0);
+        }
+    }
+    private void AbilityMod(){
+
+    }
+    public String displayXPNEED(){
+        if(level == 100){
+            return "UNKNOWN";
+        }
+        else{
+            return String.valueOf(TNLxp);
+        }
+    }
+
+
+
+}
