@@ -151,6 +151,21 @@ public class Utility {
         }
     };
 
+    public static HashMap<Integer, Creature> baseInfo = new HashMap<Integer, Creature>(){
+        {
+            try{
+                BufferedReader move = new BufferedReader(new FileReader("rescource/Database/Pokemon.csv"));
+                String line;
+                while((line = move.readLine())!=null){
+                    put(Integer.valueOf(line.substring(0, line.indexOf(','))), new Creature(line.split(",")));
+                }
+                move.close();
+            }catch(Exception e){
+
+            }
+        }
+    };
+
     public static float EFFECTIVE(TYPE Move, TYPE DefMain, TYPE DefSub){
         return chart(Move, DefMain) * chart(Move, DefSub);
     }
