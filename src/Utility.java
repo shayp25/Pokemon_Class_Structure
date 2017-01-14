@@ -14,6 +14,7 @@ public class Utility {
 
     public enum CONTEST{COOL, BEAUTIFUL, CUTE, CLEVER, TOUGH}
 
+    public enum TYPE{NORMAL, FIRE, WATER, GRASS, ELECTRIC, ICE, FIGHTING, POISON, HUDSON, GROUND, FLYING, PSYCHIC, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY, GLITCH, QMARK, SHADOW, TYPELESS, NONE }
 
     public static ArrayList<Long> Erratic = new ArrayList<Long>(){
         {
@@ -130,8 +131,6 @@ public class Utility {
 
         return Fluctuating.get(currentLevel);
     }
-
-    public enum TYPE{NORMAL, FIRE, WATER, GRASS, ELECTRIC, ICE, FIGHTING, POISON, HUDSON, GROUND, FLYING, PSYCHIC, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY, GLITCH, QMARK, SHADOW, TYPELESS, NONE }
 
     public static HashMap<Integer, Move> moveset = new HashMap<Integer, Move>(){
         {

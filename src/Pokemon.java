@@ -19,6 +19,7 @@ public class Pokemon {
     private String NickName;
     private long maxHealth;
     private long currentHealth;
+    private int BIN1, BIN2;
     // private BufferedImage img;
     private Integer level;
     private Long XP;
@@ -27,11 +28,14 @@ public class Pokemon {
     private ArrayList<Move> KNOWNMOVES;
     private HashMap<Integer, Move> LEARNED;
     private Utility.ExperienceGroup XPMODE;
-
+    private Utility.TYPE MAIN;
+    private Utility.TYPE SUB;
 
     public Pokemon(String ID){
         id = ID;
     }
+
+
     public int randomdistrubte(int x, int y, int r){
         int ranRange = 0;
 
@@ -69,6 +73,13 @@ public class Pokemon {
         }
     }
 
+    private void splitUP(){
+        String binary = "";
+        binary = Integer.toBinaryString(BIN1);
 
+
+        binary = Integer.toBinaryString(BIN2);
+
+    }
 
 }
