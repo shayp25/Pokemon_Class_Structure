@@ -44,6 +44,7 @@ public class Base {
     }
     public void increaseIV(int increase){
         IV += increase;
+        if(Gen == Utility.STATS.TOTAL)
         TOTAL.increaseIV(increase);
     }
     public int getEV() {
