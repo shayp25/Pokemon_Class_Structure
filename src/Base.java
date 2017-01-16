@@ -23,5 +23,34 @@ public class Base {
     }
 
 
+    public int getBase_Stat() {
+        return Base_Stat;
+    }
 
+    public void setBase_Stat(int base_Stat) {
+        Base_Stat = base_Stat;
+    }
+    public void increaseBase_Stat(int increase){
+        Base_Stat += increase;
+        if(Gen == Utility.STATS.TOTAL)
+        TOTAL.increaseBase_Stat(increase);
+    }
+    public int getIV() {
+        return IV;
+    }
+
+    public void setIV(int IV) {
+        this.IV = IV;
+    }
+    public void increaseIV(int increase){
+        IV += increase;
+        TOTAL.increaseIV(increase);
+    }
+    public int getEV() {
+        return EV;
+    }
+
+    public void setEV(int EV) {
+        this.EV = EV;
+    }
 }
