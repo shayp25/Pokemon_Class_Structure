@@ -6,14 +6,6 @@ import java.util.logging.Level;
  * Created by taylor hudson on 1/13/2017.
  */
 public class Pokemon {
-    private int HP;
-    private int Attack;
-    private int Defense;
-    private int Sp_Attack;
-    private int Sp_Defense;
-    private int Speed;
-    private int Total;
-    private int Avg;
     private String id;
     private String Poke;
     private String NickName;

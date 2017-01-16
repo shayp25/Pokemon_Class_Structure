@@ -14,6 +14,8 @@ public class Utility {
 
     public enum CONTEST{COOL, BEAUTIFUL, CUTE, CLEVER, TOUGH}
 
+    public enum STATS{HP, ATTACK, DEFENSE, SP_ATTACK, SP_DEFENSE, SPEED, TOTAL, AVG}
+
     public enum TYPE{NORMAL, FIRE, WATER, GRASS, ELECTRIC, ICE, FIGHTING, POISON, HUDSON, GROUND, FLYING, PSYCHIC, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY, GLITCH, QMARK, SHADOW, TYPELESS, NONE }
 
     public static ArrayList<Long> Erratic = new ArrayList<Long>(){
