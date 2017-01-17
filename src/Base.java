@@ -3,9 +3,11 @@
  */
 public class Base {
     private Utility.STATS Gen;
+    private Utility.NATURE Nature;
     private int Base_Stat;
     private int IV;
     private int EV;
+    private int LVL;
     public Base TOTAL;
 
     public Base(){
@@ -56,13 +58,16 @@ public class Base {
             TOTAL.increaseEV(increase);
         }
     }
-    
-    public int StatMechanics(){
+    public void setLVL(int lvl){
+        LVL = lvl;
+    }
+
+    public int StatMechanics() {
         int B = Base_Stat;
         int I = IV;
         int E = EV;
-        int L = Level; // ADD TO BASE
-        int N = Nature; // ADD TO BASE
+        int L = LVL; // ADD TO BASE
+        float N = Utility.nature(Gen, Nature);//Nature; // ADD TO BASE At the moment
         /*
         
         N (Nature)
@@ -98,7 +103,9 @@ Calm	Special Defense	Attack
 Gentle	Special Defense	Defense
 Sassy	Special Defense	Speed
 Careful	Special Defense	Special Attack
-Incidentally, Pokémon also have different PokéBlock/Poffin flavor preferences depending on their nature. Each flavor corresponds to one stat (Spicy for Attack, Sour for Defense, Sweet for Speed, Dry for Special Attack and Bitter for Special Defense), and the Pokémon will like the flavor associated with the stat their nature raises but dislike the one associated with the stat it lowers.
+Incidentally, Pokémon also have different PokéBlock/Poffin flavor preferences depending on their nature. Each flavor corresponds to one stat
+(Spicy for Attack, Sour for Defense, Sweet for Speed, Dry for Special Attack and Bitter for Special Defense),
+and the Pokémon will like the flavor associated with the stat their nature raises but dislike the one associated with the stat it lowers.
 
 The N value in the formula itself will take on one of three values:
 
@@ -106,5 +113,11 @@ The N value in the formula itself will take on one of three values:
 1 if the Pokémon's nature does not affect the stat in question;
 0.9 if the Pokémon's nature lowers the stat in question.
         */
-        Math.floor(Math.floor((2 * B + I + E) * L / 100 +5)*N); // Not for Health
+
+        if (Gen != Utility.STATS.HP || Gen != Utility.STATS.TOTAL || Gen != Utility.STATS.AVG)
+            return (int)Math.floor(Math.floor((2 * B + I + E) * L / 100 + 5) * N); // Not for Health
+        if (Gen == Utility.STATS.HP)
+            return (int)Math.floor((2 * B + I + E) * L / 100 + L + 10);
+        return 0;
+    }
 }

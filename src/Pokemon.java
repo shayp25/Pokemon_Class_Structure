@@ -19,6 +19,7 @@ public class Pokemon {
     private Long EvolveLevel;
     private ArrayList<Move> KNOWNMOVES;
     private HashMap<Integer, Move> LEARNED;
+    private HashMap<Utility.STATS, Base> pokeSTAT;
     private Utility.ExperienceGroup XPMODE;
     private Utility.TYPE MAIN;
     private Utility.TYPE SUB;
@@ -45,6 +46,7 @@ public class Pokemon {
         level = level + 1;
         TNLxp = Utility.TNL(level, XPMODE);
         AbilityMod();
+        // increase all elements of pokeSTAT with *.setLVL(level)
         if(level == 100){
             TNLxp = Long.MAX_VALUE;
             return;

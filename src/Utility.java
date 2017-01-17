@@ -18,6 +18,10 @@ public class Utility {
 
     public enum TYPE{NORMAL, FIRE, WATER, GRASS, ELECTRIC, ICE, FIGHTING, POISON, HUDSON, GROUND, FLYING, PSYCHIC, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY, GLITCH, QMARK, SHADOW, TYPELESS, NONE }
 
+    public enum NATURE{HARDY, LONELY, BRAVE, ADAMANT, NAUGHTY, BOLD, DOCILE, RELAXED, IMPISH, LAX, TIMID, HASTY, SERIOUS, JOLLY, NAIVE, MODEST, MILD, QUIET, BASHFUL, RASH, CALM, GENTLE, SASSY, CAREFUL, QUIRKY}
+
+    public enum FLAVOR{SPICY, DRY, SWEET, BITTER, SOUR}
+
     public static ArrayList<Long> Erratic = new ArrayList<Long>(){
         {
             add(0L); // Erratic.get(0);
@@ -311,5 +315,54 @@ public class Utility {
         return 1f;
 
     }
+
+    public static float nature(STATS statCAT, NATURE pokeNATURE){
+        if(pokeNATURE == NATURE.HARDY || pokeNATURE == NATURE.DOCILE || pokeNATURE == NATURE.BASHFUL || pokeNATURE == NATURE.SERIOUS || pokeNATURE == NATURE.QUIRKY)
+            return 1f;
+        if(statCAT == STATS.ATTACK){
+            // Increase first
+            if(pokeNATURE == NATURE.LONELY || pokeNATURE == NATURE.BRAVE || pokeNATURE == NATURE.ADAMANT || pokeNATURE == NATURE.NAUGHTY){
+                return 1.1f;
+            }
+            else if(pokeNATURE == NATURE.BOLD || pokeNATURE == NATURE.TIMID || pokeNATURE == NATURE.MODEST || pokeNATURE == NATURE.CALM){
+                return .9f;
+            }
+        }
+        else if(statCAT == STATS.DEFENSE){
+            if(pokeNATURE == NATURE.BOLD || pokeNATURE == NATURE.RELAXED || pokeNATURE == NATURE.IMPISH || pokeNATURE == NATURE.LAX){
+                return 1.1f;
+            }
+            else if(pokeNATURE == NATURE.LONELY || pokeNATURE == NATURE.HASTY || pokeNATURE == NATURE.MILD || pokeNATURE == NATURE.GENTLE){
+                return .9f;
+            }
+        }
+        else if(statCAT == STATS.SPEED){
+            if(pokeNATURE == NATURE.TIMID || pokeNATURE == NATURE.HASTY || pokeNATURE == NATURE.JOLLY || pokeNATURE == NATURE.NAIVE){
+                return 1.1f;
+            }
+            else if(pokeNATURE == NATURE.BRAVE || pokeNATURE == NATURE.RELAXED || pokeNATURE == NATURE.QUIET || pokeNATURE == NATURE.SASSY){
+                return .9f;
+            }
+        }
+        else if(statCAT == STATS.SP_ATTACK){
+            if(pokeNATURE == NATURE.MODEST || pokeNATURE == NATURE.MILD || pokeNATURE == NATURE.QUIET || pokeNATURE == NATURE.RASH){
+                return 1.1f;
+            }
+            else if(pokeNATURE == NATURE.ADAMANT || pokeNATURE == NATURE.IMPISH || pokeNATURE == NATURE.JOLLY || pokeNATURE == NATURE.CAREFUL){
+                return .9f;
+            }
+        }
+        else if(statCAT == STATS.SP_DEFENSE){
+            if(pokeNATURE == NATURE.CALM || pokeNATURE == NATURE.GENTLE || pokeNATURE == NATURE.SASSY || pokeNATURE == NATURE.CAREFUL){
+                return 1.1f;
+            }
+            else if(pokeNATURE == NATURE.NAUGHTY || pokeNATURE == NATURE.LAX || pokeNATURE == NATURE.NAIVE || pokeNATURE == NATURE.RASH){
+                return .9f;
+            }
+        }
+
+        return 1f;
+    }
+
 
 }
