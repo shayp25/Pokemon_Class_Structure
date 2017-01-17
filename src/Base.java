@@ -28,6 +28,7 @@ public class Base {
     public int getBase_Stat() {
         return Base_Stat;
     }
+
     public void increaseBase_Stat(int increase){
         Base_Stat += increase;
         if(Gen != Utility.STATS.TOTAL)
@@ -73,9 +74,13 @@ public class Base {
         N (Nature)
 https://www.dragonflycave.com/stats.aspx
 https://webcache.googleusercontent.com/search?q=cache:yH9JF3tPKWoJ:https://www.dragonflycave.com/stats.aspx+&cd=10&hl=en&ct=clnk&gl=us
-A Pokémon's nature describes its personality and is displayed on every Pokémon's summary screen in the Advance games onwards. Natures didn't exist in the pre-Advance games, so for the purposes of R/B/Y/G/S/C, always regard N as being 1.
+A Pokémon's nature describes its personality and is displayed on every Pokémon's summary screen in the Advance games onwards.
+Natures didn't exist in the pre-Advance games, so for the purposes of R/B/Y/G/S/C, always regard N as being 1.
 
-Some natures are neutral and have no effect on your Pokémon's stats, while others increase one stat by 10% at the cost of decreasing another by 10%. Hit Points are never affected by natures, but there is a nature corresponding to every possible pair of the other five stats to raise/lower, in addition to five neutral ones. Since HeartGold and SoulSilver, your Pokémon's nature's effect on its stats has been indicated on the stat screen by coloring the name of the boosted stat red and the name of the reduced stat blue, but for reference, here's a table of all the natures:
+Some natures are neutral and have no effect on your Pokémon's stats, while others increase one stat by 10% at the cost of decreasing another by 10%.
+Hit Points are never affected by natures, but there is a nature corresponding to every possible pair of the other five stats to raise/lower,
+in addition to five neutral ones. Since HeartGold and SoulSilver, your Pokémon's nature's effect on its stats has been indicated on the stat screen
+by coloring the name of the boosted stat red and the name of the reduced stat blue, but for reference, here's a table of all the natures:
 
 Nature	Increases	Decreases
 Hardy	None	None
