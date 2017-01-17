@@ -162,6 +162,7 @@ public class Utility {
             try{
                 BufferedReader move = new BufferedReader(new FileReader("rescource/Database/Pokemon.csv"));
                 String line;
+                move.readLine(); // First Line of Pokemon.csv
                 while((line = move.readLine())!=null){
                     put(Integer.valueOf(line.substring(0, line.indexOf(','))), new Creature(line.split(",")));
                 }
